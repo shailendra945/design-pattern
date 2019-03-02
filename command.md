@@ -1,4 +1,7 @@
-the Command, which allows the requester of a particular action to be decoupled from the object that performs the action. Where the Chain of Responsibility pattern forwarded requests along a chain, the Command pattern forwards the request to a specific module.Command in the Real World 
+The Command, which allows the requester of a particular action to be decoupled from the object that performs the action. Where the Chain of Responsibility pattern forwarded requests along a chain, the Command pattern forwards the request to a specific module.
+
+Command in the Real World :
+-----------------------------
 One example of the command pattern being executed in the real world is the idea of a table order at a restaurant: the waiter takes the order, which is a command from the customer.This order is then queued for the kitchen staff.  The waiter tells the chef that the a new order has come in, and the chef has enough information to cook the meal.The Command Pattern
 The Command pattern is known as a behavioural pattern,as it's used to manage algorithms, relationships and responsibilities between objects. Thedefinition of Command provided in the original Gang of Four book on DesignPatterns states: 
 
@@ -6,7 +9,7 @@ Encapsulate a request as an object, thereby letting you parameterize clients wit
 
 So what does this mean in a class diagram? 
 
-Image title
+refer command class diagram image.
 
 
 
@@ -14,12 +17,10 @@ Command declares an interface for all commands, providing a simple execute() met
 
 The following sequence diagram shows the relationship in a clearer way: 
 
-Image title
+refer command sequence diagram
 
-If this all seems a bit confusing right now, hang on for the code example later on in the article.
-
-When Would I Use This Pattern?
 The Command Pattern is useful when:
+------------------------------------------
 
 A history of requests is needed
 You need callback functionality
@@ -113,5 +114,7 @@ public class Client{
     control.pressButton();
   }
 }
-Watch Out for the Downsides
+
+Watch Out for the Downsides:
+------------------------------
 This pattern ends up forcing a lot of Command classes that will make your design look cluttered - more operations being made possible leads to more command classes. Intelligence required of which Command to use and when leads to possible maintainence issues for the central controller.
